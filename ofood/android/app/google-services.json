@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "81105202229",
+    "project_id": "o-food-99b42",
+    "storage_bucket": "o-food-99b42.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81105202229:android:1884c6f95cdd4bd72f957c",
+        "android_client_info": {
+          "package_name": "com.example.ofood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "81105202229-mmeajeeijv4e0tqkt69b0bt7pmlb5it1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMIcUOlXnSn8LoGamocK-lHMNmCYHn_lg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "81105202229-mmeajeeijv4e0tqkt69b0bt7pmlb5it1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
