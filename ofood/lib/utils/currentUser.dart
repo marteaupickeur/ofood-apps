@@ -13,7 +13,7 @@ class CurrentUser extends ChangeNotifier {
   getUserFromAuth() async {
     SharedPreferences sp = await SharedPreferences.getInstance();
     user = sp.getString('myUserId');
-    if (user != null) {
+    if (user != 'null') {
       getUserDataFromDatabase();
     }
 

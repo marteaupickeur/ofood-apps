@@ -48,8 +48,9 @@ class HandleOrders {
   }
 
   // prepare the request and send to DB
+  // if i don't use userId as null like 'null' it will create order on DB and set userId as null
   sendOrdersOnline() async {
-    if (goodOrders.isNotEmpty) {
+    if (goodOrders.isNotEmpty && userId != 'null') {
       for (List l in goodOrders) {
         var map = {};
         l.forEach((element) => map[element[0].toString()] = element[1]);
@@ -60,6 +61,8 @@ class HandleOrders {
             restoName: food.foodResto,
             userId: userId));
       }
+    } else {
+      print('no way bro §');
     }
   }
 }

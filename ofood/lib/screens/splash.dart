@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Spalsh extends StatefulWidget {
   const Spalsh({Key? key}) : super(key: key);
@@ -18,8 +19,21 @@ class _SpalshState extends State<Spalsh> {
   }
 
   // this one allow us to reach the page login
-  agenceRoute() {
-    Navigator.pushReplacementNamed(context, '/log');
+  agenceRoute() async {
+    SharedPreferences sp = await SharedPreferences.getInstance();
+
+    // when no userId is set on 'null' like stirng (connected at least one time)
+    if (sp.getString('myUserId') == 'null') {
+      Navigator.pushReplacementNamed(context, '/log');
+    }
+    // when no userId is set on null like real null var (never connected)
+    else if (sp.getString('myUserId') == null) {
+      Navigator.pushNamed(context, '/log');
+    }
+    // when userId is set (already connected)
+    else {
+      Navigator.pushNamed(context, '/agence');
+    }
   }
 
   @override

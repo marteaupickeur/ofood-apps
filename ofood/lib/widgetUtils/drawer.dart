@@ -160,6 +160,10 @@ class _OfoodDrawerState extends State<OfoodDrawer> {
                                         Colors.orange)),
                                 onPressed: () async {
                                   await auth.signOut();
+                                  // wipe out the user-id on my SP
+                                  SharedPreferences sp =
+                                      await SharedPreferences.getInstance();
+                                  sp.setString("myUserId", 'null');
                                   // remove the Alert dialog
                                   Navigator.pushNamedAndRemoveUntil(context,
                                       '/log', (Route<dynamic> route) => false);
